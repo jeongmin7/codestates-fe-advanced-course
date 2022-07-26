@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import LogoTab from "../components/LogoTab";
 import styled from "styled-components";
+import Pagination from "../components/Pagination";
 import Loading from "./Loading";
 
 const ListContainer = styled.div`
@@ -12,17 +13,16 @@ const ListContainer = styled.div`
   margin-top: 50px;
   border-top: 1px solid #333;
   border-bottom: 1px solid #333;
-  padding-top: 10px;
 `;
 
 const ListTitle = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 0 20px;
   justify-content: space-between;
   font-size: 16px;
   border-bottom: 1px solid #555;
   padding-bottom: 10px;
+  padding: 10px 20px 10px 30px;
 `;
 const ListRow = styled.div`
   display: flex;
@@ -46,6 +46,10 @@ const List = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState();
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostPerPage] = useState(10);
+  const offset = (currentPage - 1) * postsPerPage;
+
   const getPosts = () => {
     setLoading(true);
 
@@ -64,12 +68,12 @@ const List = () => {
       {loading === false ? (
         <ListContainer>
           <ListTitle>
-            <div> No.</div>
-            <div>Title</div>
+            <div>No.</div>
+            <Title>Title</Title>
             <div>Writer</div>
           </ListTitle>
           {data &&
-            data.slice().map((el) => (
+            data.slice(offset, offset + postsPerPage).map((el) => (
               <LinkedId to={`/posts/${el.id}`}>
                 <div>
                   <ListRow>
@@ -85,6 +89,14 @@ const List = () => {
         </ListContainer>
       ) : (
         <Loading />
+      )}
+      {data && (
+        <Pagination
+          total={data.length}
+          postsPerPage={postsPerPage}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
       )}
     </div>
   );

@@ -79,7 +79,6 @@ const CommentContent = styled.div`
 `;
 const Post = () => {
   const [loading, setLoading] = useState(false);
-
   const [data, setData] = useState([]);
   const [comments, setComments] = useState([]);
 
