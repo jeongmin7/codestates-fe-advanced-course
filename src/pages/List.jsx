@@ -2,10 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import LogoTab from "../components/LogoTab";
 import styled from "styled-components";
 import Pagination from "../components/Pagination";
 import Loading from "./Loading";
+
+const MenuTitle = styled.div`
+  color: #333;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px 0;
+`;
 
 const ListContainer = styled.div`
   width: 70%;
@@ -64,7 +74,6 @@ const List = () => {
 
   return (
     <div>
-      <LogoTab />
       {loading === false ? (
         <ListContainer>
           <ListTitle>
