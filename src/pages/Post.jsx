@@ -108,7 +108,7 @@ const Post = () => {
       ) : (
         <ModalBack>
           <Modal>
-            <Link to="/list">
+            <Link to="/">
               <Close>
                 <FontAwesomeIcon icon={faTimes} />
               </Close>
