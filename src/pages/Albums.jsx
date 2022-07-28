@@ -1,51 +1,34 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import LogoTab from "../components/LogoTab";
 import Loading from "./Loading";
 import Pagination from "../components/Pagination";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Title = styled.div`
-  color: #333;
-  font-size: 2rem;
-  font-weight: 700;
-  padding: 1rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 20px 0;
-`;
-
 const Container = styled.div`
   width: 70%;
   margin: auto;
   margin-top: 50px;
-  border-top: 1px solid #333;
-  border-bottom: 1px solid #333;
 `;
 const Expl = styled.div`
-  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 10px;
-  border-bottom: 1px solid #333;
+  font-size: 16px;
+  border-bottom: 1px solid #555;
+  padding-bottom: 10px;
+  padding: 10px 20px 10px 30px;
 `;
 const AlbumDetail = styled.div`
-  width: 100%;
   display: flex;
   justify-content: space-between;
-  margin: 0.5rem;
-  padding: 0.5rem;
+  margin: 2rem;
   font-size: 1.2rem;
 `;
 
 const AlbumLink = styled(Link)`
-  color: #333;
+  color: ${(props) => props.theme.textColor};
   text-decoration: none;
-  display: flex;
-  padding-top: 10px;
 `;
 const NumAndTitle = styled.div`
   display: flex;
@@ -53,6 +36,13 @@ const NumAndTitle = styled.div`
 `;
 const AlbumTitle = styled.div`
   margin-left: 40px;
+`;
+const AlbumContainer = styled.div`
+  border: 2px solid ${(props) => props.theme.textColor};
+  width: 90%;
+  margin: 0;
+  margin-left: 4rem;
+  border-radius: 10px;
 `;
 
 const Albums = () => {
@@ -74,7 +64,7 @@ const Albums = () => {
   return (
     <div>
       {loading === false ? (
-        <div>
+        <AlbumContainer>
           <Container>
             <Expl>
               <div>No.</div>
@@ -93,18 +83,18 @@ const Albums = () => {
                   </AlbumDetail>
                 </AlbumLink>
               ))}
+            {data && (
+              <Pagination
+                total={data.length}
+                postsPerPage={postsPerPage}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+              />
+            )}
           </Container>
-        </div>
+        </AlbumContainer>
       ) : (
         <Loading />
-      )}
-      {data && (
-        <Pagination
-          total={data.length}
-          postsPerPage={postsPerPage}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
       )}
     </div>
   );

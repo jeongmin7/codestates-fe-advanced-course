@@ -32,7 +32,7 @@ const Button = styled.button`
     font-weight: 900;
   }
 `;
-function Pagination({ total, postsPerPage, currentPage, setCurrentPage }) {
+const Pagination = ({ total, postsPerPage, currentPage, setCurrentPage }) => {
   const pageCount = Math.ceil(total / postsPerPage);
 
   return (
@@ -64,6 +64,6 @@ function Pagination({ total, postsPerPage, currentPage, setCurrentPage }) {
       </Nav>
     </>
   );
-}
+};
 
 export default Pagination;
