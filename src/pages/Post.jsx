@@ -26,7 +26,7 @@ const Modal = styled.div`
   min-height: 60%;
   padding: 2.5em;
   border-radius: 1em;
-  background: white;
+  background: ${(props) => props.theme.bgColor};
   display: flex;
   flex-direction: column;
 `;

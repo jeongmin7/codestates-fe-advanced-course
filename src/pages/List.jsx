@@ -6,23 +6,10 @@ import styled from "styled-components";
 import Pagination from "../components/Pagination";
 import Loading from "./Loading";
 
-const MenuTitle = styled.div`
-  color: #333;
-  font-size: 2rem;
-  font-weight: 700;
-  padding: 1rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 20px 0;
-`;
-
 const ListContainer = styled.div`
   width: 70%;
   margin: auto;
   margin-top: 50px;
-  border-top: 1px solid #333;
-  border-bottom: 1px solid #333;
 `;
 
 const ListTitle = styled.div`
@@ -36,7 +23,6 @@ const ListTitle = styled.div`
 `;
 const ListRow = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   margin: 2rem;
   font-size: 1.2rem;
@@ -47,11 +33,20 @@ const NumAndTitle = styled.div`
 `;
 const LinkedId = styled(Link)`
   text-decoration: none;
-  color: #333;
+  color: ${(props) => props.theme.linkColor};
 `;
 const Title = styled.div`
   margin-left: 40px;
 `;
+
+const BigContainer = styled.div`
+  border: 2px solid ${(props) => props.theme.textColor};
+  width: 90%;
+  margin: 0;
+  margin-left: 4rem;
+  border-radius: 10px;
+`;
+
 const List = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState();
@@ -75,37 +70,39 @@ const List = () => {
   return (
     <div>
       {loading === false ? (
-        <ListContainer>
-          <ListTitle>
-            <div>No.</div>
-            <Title>Title</Title>
-            <div>Writer</div>
-          </ListTitle>
-          {data &&
-            data.slice(offset, offset + postsPerPage).map((el) => (
-              <LinkedId to={`/posts/${el.id}`}>
-                <div>
-                  <ListRow>
-                    <NumAndTitle>
-                      {el.id}
-                      <Title>{el.title}</Title>
-                    </NumAndTitle>
-                    <div>{el.userId}</div>
-                  </ListRow>
-                </div>
-              </LinkedId>
-            ))}
-        </ListContainer>
+        <BigContainer>
+          <ListContainer>
+            <ListTitle>
+              <div>No.</div>
+              <Title>Title</Title>
+              <div>Writer</div>
+            </ListTitle>
+            {data &&
+              data.slice(offset, offset + postsPerPage).map((el) => (
+                <LinkedId to={`/posts/${el.id}`}>
+                  <div>
+                    <ListRow>
+                      <NumAndTitle>
+                        {el.id}
+                        <Title>{el.title}</Title>
+                      </NumAndTitle>
+                      <div>{el.userId}</div>
+                    </ListRow>
+                  </div>
+                </LinkedId>
+              ))}
+            {data && (
+              <Pagination
+                total={data.length}
+                postsPerPage={postsPerPage}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+              />
+            )}
+          </ListContainer>
+        </BigContainer>
       ) : (
         <Loading />
-      )}
-      {data && (
-        <Pagination
-          total={data.length}
-          postsPerPage={postsPerPage}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
       )}
     </div>
   );
