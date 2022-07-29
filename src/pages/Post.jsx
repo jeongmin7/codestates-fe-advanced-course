@@ -36,6 +36,7 @@ const Close = styled.div`
   right: 30px;
   top: 20px;
   font-size: 35px;
+  color: ${(props) => props.theme.textColor};
   &:hover {
     cursor: pointer;
   }
@@ -77,23 +78,35 @@ const CommentContent = styled.div`
   height: 100%;
   font-size: 1.2rem;
 `;
-const Post = () => {
+const Post = ({ selected, openModal }) => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   const [comments, setComments] = useState([]);
 
-  const params = useParams();
+  const [user, setUser] = useState([]);
+
   const getPost = () => {
     setLoading(true);
     axios
-      .get(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
+      .get(`https://jsonplaceholder.typicode.com/posts/${selected}`)
       .then((res) => setData(res.data))
       .then(() => setLoading(false));
   };
   useEffect(getPost, []);
+
+  const getUserName = () => {
+    setLoading(true);
+
+    axios
+      .get(`https://jsonplaceholder.typicode.com/users/${selected}`, {})
+      .then((res) => setUser(res.data))
+      .then(() => setLoading(false))
+      .catch(() => alert("사용자 정보를 불러올 수 없습니다. "));
+  };
+  useEffect(getUserName, []);
   const getComments = () => {
     axios
-      .get(`https://jsonplaceholder.typicode.com/post/${params.id}/comments`)
+      .get(`https://jsonplaceholder.typicode.com/post/${selected}/comments`)
       .then((res) => setComments(res.data))
       .catch(() => alert("댓글 목록을 불러올 수 없습니다. "));
   };
@@ -102,20 +115,17 @@ const Post = () => {
 
   return (
     <div>
-      <LogoTab />
       {loading ? (
         <Loading />
       ) : (
         <ModalBack>
           <Modal>
-            <Link to="/">
-              <Close>
-                <FontAwesomeIcon icon={faTimes} />
-              </Close>
-            </Link>
+            <Close onClick={openModal}>
+              <FontAwesomeIcon icon={faTimes} />
+            </Close>
             <Content>
               <Title>{data.title}</Title>
-              <Writer>written by{data.userId}</Writer>
+              <Writer>written by {user.name}</Writer>
               <div>{data.body}</div>
             </Content>
             <CommentContainer>
