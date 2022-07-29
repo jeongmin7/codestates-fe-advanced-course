@@ -27,7 +27,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://jeongmin7.github.io/codestates-fe-advanced-course/",
+  "homepage": "https://jeongmin7.github.io/codestates-fe-advanced-course/index.html",
   "eslintConfig": {
     "extends": [
       "react-app",
