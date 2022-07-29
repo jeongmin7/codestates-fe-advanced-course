@@ -31,7 +31,6 @@ function App() {
               <Main isDarkMode={isDarkMode} handleDarkMode={handleDarkMode} />
             }
           />
-          <Route path="/posts/:id" element={<Post />} />
           <Route path="/albums/:id" element={<Photos />} />
         </Routes>
       </ThemeProvider>
