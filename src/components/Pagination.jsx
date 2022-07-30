@@ -10,9 +10,14 @@ const Nav = styled.nav`
 const Button = styled.button`
   border: none;
   border-radius: 8px;
+  border: 1px solid #333;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 8px;
   margin: 0;
-  color: #333;
+  color: ${(props) => props.theme.textColor};
   font-size: 1rem;
   background-color: transparent;
 
