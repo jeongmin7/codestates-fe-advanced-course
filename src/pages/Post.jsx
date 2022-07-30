@@ -1,11 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import LogoTab from "../components/LogoTab";
 import styled from "styled-components";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
 import Loading from "./Loading";
 const ModalBack = styled.div`
   z-index: 2;
@@ -26,7 +23,7 @@ const Modal = styled.div`
   min-height: 60%;
   padding: 2.5em;
   border-radius: 1em;
-  background: ${(props) => props.theme.bgColor};
+  background: ${(props) => props.theme.tabColor};
   display: flex;
   flex-direction: column;
 `;
@@ -46,13 +43,15 @@ const Content = styled.div`
   padding-bottom: 0.5rem;
 `;
 const Title = styled.div`
-  font-size: 1.8rem;
+  font-size: 2rem;
   width: 100%;
   font-weight: 700;
+  margin-bottom: 1rem;
 `;
 
 const Writer = styled.div`
   font-size: 1rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
   margin-right: 10%;
   text-align: end;
@@ -125,7 +124,7 @@ const Post = ({ selected, openModal }) => {
             </Close>
             <Content>
               <Title>{data.title}</Title>
-              <Writer>written by {user.name}</Writer>
+              <Writer>{user.name}</Writer>
               <div>{data.body}</div>
             </Content>
             <CommentContainer>

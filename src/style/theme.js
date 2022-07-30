@@ -1,14 +1,16 @@
 export const lightTheme = {
-  bgColor: "#fff",
+  bgColor: "#faf2ed",
   textColor: "#333",
   linkColor: "#333",
+  ModalColor: "#FFF",
   tabColor: "#fff",
 };
 
 export const darkTheme = {
-  bgColor: "#282c35",
+  bgColor: "#333",
   textColor: "#fff",
   linkColor: "#fff",
+  ModalColor: "#333",
   tabColor: "#333",
 };
 

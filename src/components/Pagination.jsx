@@ -10,9 +10,13 @@ const Nav = styled.nav`
 const Button = styled.button`
   border: none;
   border-radius: 8px;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 8px;
   margin: 0;
-  color: #333;
+  color: ${(props) => props.theme.textColor};
   font-size: 1rem;
   background-color: transparent;
 
@@ -29,6 +33,7 @@ const Button = styled.button`
   &[aria-current] {
     cursor: revert;
     transform: revert;
+    font-size: 1.2rem;
     font-weight: 900;
   }
 `;
