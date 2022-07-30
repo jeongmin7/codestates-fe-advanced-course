@@ -1,39 +1,47 @@
 import React, { useState } from "react";
-import Albums from "../pages/Albums";
-import List from "../pages/List";
-import LogoTab from "./LogoTab";
+import Albums from "./Albums";
+import List from "./List";
+import LogoTab from "../components/LogoTab";
 import styled from "styled-components";
-import Darkmode from "./DarkMode";
+import Darkmode from "../components/DarkMode";
 
 const TabMenu = styled.div`
+  width: 90%;
   display: flex;
-  flex-direction: row;
-  margin-top: 4rem;
-  margin-left: 4rem;
-  font-size: 2rem;
+  margin: auto;
+  margin-top: 2rem;
+  font-size: 1.3rem;
   font-weight: 700;
   .menu {
-    width: 20%;
-    padding: 20px 10px;
+    padding: 1.3rem 1rem;
     cursor: pointer;
+    background-color: ${(props) => props.theme.tabColor};
   }
   .activated {
     background-color: #4900cc;
     color: rgba(255, 255, 255, 1);
     transition: 0.5s;
+    transform: scale(1.05);
   }
 `;
 const Menu = styled.div`
-  border: 1px solid ${(props) => props.theme.textColor};
+  border-top: 1px solid ${(props) => props.theme.textColor};
+  border-left: 1px solid ${(props) => props.theme.textColor};
+  border-right: 1px solid ${(props) => props.theme.textColor};
   border-radius: 6px;
 `;
 const TogglePosition = styled.div`
-  display: flex;
+  display: inline;
+  position: absolute;
+  top: 5rem;
+  right: 2rem;
   justify-content: end;
   margin-right: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 `;
-
+const Container = styled.div`
+  position: relative;
+`;
 const Main = ({ isDarkMode, handleDarkMode }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -53,7 +61,7 @@ const Main = ({ isDarkMode, handleDarkMode }) => {
   ];
 
   return (
-    <div>
+    <Container>
       <LogoTab />
       <TogglePosition>
         <Darkmode isDarkMode={isDarkMode} handleDarkMode={handleDarkMode} />
@@ -72,7 +80,7 @@ const Main = ({ isDarkMode, handleDarkMode }) => {
         ))}
       </TabMenu>
       <div>{tabContent[activeIndex].tabCont}</div>
-    </div>
+    </Container>
   );
 };
 export default Main;

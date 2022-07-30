@@ -10,7 +10,6 @@ const Nav = styled.nav`
 const Button = styled.button`
   border: none;
   border-radius: 8px;
-  border: 1px solid #333;
   width: 2rem;
   display: flex;
   justify-content: center;
@@ -34,6 +33,7 @@ const Button = styled.button`
   &[aria-current] {
     cursor: revert;
     transform: revert;
+    font-size: 1.2rem;
     font-weight: 900;
   }
 `;

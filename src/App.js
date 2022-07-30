@@ -1,7 +1,6 @@
-import Post from "./pages/Post";
 import { Route, Routes } from "react-router-dom";
 import Photos from "./pages/Photos";
-import Main from "./components/Main";
+import Main from "./pages/Main";
 import reset from "styled-reset";
 import { darkTheme, lightTheme } from "./style/theme";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
