@@ -23,6 +23,7 @@ const SearchInput = styled.input`
   height: 1.5rem;
   border: none;
   background-color: ${(props) => props.theme.ModalColor};
+  color: ${(props) => props.theme.textColor};
 `;
 
 const Clear = styled.div`
