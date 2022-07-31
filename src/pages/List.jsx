@@ -74,10 +74,9 @@ const List = () => {
   const [post, setPost] = useState(false);
   const [selected, setSelected] = useState([]);
   const openModal = (key) => {
-    setSelected(filteredItem.filter((_, index) => index === key));
+    setSelected(filteredItem.filter((_, index) => index + 1 === key));
     setPost(!post);
   };
-
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostPerPage] = useState(10);
   const offset = (currentPage - 1) * postsPerPage;
@@ -95,14 +94,12 @@ const List = () => {
 
   const getPosts = () => {
     setLoading(true);
-
     axios
       .get("https://jsonplaceholder.typicode.com/posts", {})
       .then((res) => setData(res.data))
       .then(() => setLoading(false))
       .catch(() => alert("글 목록을 불러올 수 없습니다. "));
   };
-
   useEffect(getPosts, []);
   return (
     <div>
@@ -127,7 +124,7 @@ const List = () => {
                 .slice(offset, offset + postsPerPage)
                 .map((el, key) => (
                   <ListContent key={el.id}>
-                    <div onClick={() => openModal(key)}>
+                    <div onClick={() => openModal(el.id)}>
                       <div>
                         <ListRow>
                           <NumAndTitle>
@@ -142,7 +139,11 @@ const List = () => {
                 ))
             )}
             {post ? (
-              <Post selected={selected[0]?.id} openModal={openModal} sel />
+              <Post
+                selected={selected[0]?.id}
+                openModal={openModal}
+                userName={selected[0]?.userId}
+              />
             ) : (
               ""
             )}

@@ -21,7 +21,7 @@ const Modal = styled.div`
   min-width: 40%;
   width: 40%;
   min-height: 60%;
-  padding: 2.5em;
+  padding: 3rem;
   border-radius: 1em;
   background: ${(props) => props.theme.tabColor};
   display: flex;
@@ -40,7 +40,9 @@ const Close = styled.div`
 `;
 const Content = styled.div`
   font-size: 1.4rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #555;
+  margin-bottom: 1rem;
 `;
 const Title = styled.div`
   font-size: 2rem;
@@ -50,58 +52,63 @@ const Title = styled.div`
 `;
 
 const Writer = styled.div`
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: 700;
   margin-bottom: 1.5rem;
   margin-right: 10%;
   text-align: end;
 `;
 
 const CommentContainer = styled.div`
-  border-top: 1px solid #555;
+  margin-top: 3rem;
+  width: 90%;
+  margin: auto;
 `;
 const CommentTitle = styled.div`
   margin: 10px 0;
+  font-size: 1.2rem;
   font-weight: 700;
 `;
 const Comments = styled.div`
   display: grid;
   grid-template-columns: 35% 60%;
   align-items: baseline;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #555;
 `;
 const CommentWriter = styled.div`
-  height: 100%;
+  width: 80%;
+  font-weight: 500;
+  color: #333;
 `;
 const CommentContent = styled.div`
-  height: 100%;
   font-size: 1.2rem;
 `;
-const Post = ({ selected, openModal }) => {
+const Post = ({ selected, openModal, userName }) => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   const [comments, setComments] = useState([]);
-
   const [user, setUser] = useState([]);
-
   const getPost = () => {
     setLoading(true);
     axios
       .get(`https://jsonplaceholder.typicode.com/posts/${selected}`)
       .then((res) => setData(res.data))
-      .then(() => setLoading(false));
+      .then(() => setLoading(false))
+      .catch(() => alert("글을 가져올 수 없습니다. "));
   };
   useEffect(getPost, []);
 
   const getUserName = () => {
     setLoading(true);
-
     axios
-      .get(`https://jsonplaceholder.typicode.com/users/${selected}`, {})
+      .get(`https://jsonplaceholder.typicode.com/users/${userName}`, {})
       .then((res) => setUser(res.data))
       .then(() => setLoading(false))
       .catch(() => alert("사용자 정보를 불러올 수 없습니다. "));
   };
+
   useEffect(getUserName, []);
   const getComments = () => {
     axios
@@ -109,7 +116,6 @@ const Post = ({ selected, openModal }) => {
       .then((res) => setComments(res.data))
       .catch(() => alert("댓글 목록을 불러올 수 없습니다. "));
   };
-
   useEffect(getComments, []);
 
   return (

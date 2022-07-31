@@ -39,7 +39,6 @@ const Button = styled.button`
 `;
 const Pagination = ({ total, postsPerPage, currentPage, setCurrentPage }) => {
   const pageCount = Math.ceil(total / postsPerPage);
-
   return (
     <>
       <Nav>
