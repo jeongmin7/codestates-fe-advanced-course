@@ -1,9 +1,7 @@
 
 <h3>- 완성된 GIF 파일 및 배포 링크</h3>
 
-![post](https://user-images.githubusercontent.com/91598778/182012106-15e0dafb-e4a4-4144-9fb3-30c46bcb5c09.gif)
-![albums](https://user-images.githubusercontent.com/91598778/182012111-fd7454dc-c016-40c9-ac13-4b57089a29fd.gif)
-https://jeongmin7.surge.sh/
+
 <h3>- 프로젝트 실행 방법 </h3>
 1. 해당 레포지토리를 다운로드 혹은 클론한 뒤 해당 폴더를 오픈합니다. <br/>
 2. npm install을 통해 필요한 패키지를 설치합니다.<br/>
