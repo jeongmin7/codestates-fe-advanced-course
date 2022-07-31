@@ -1,7 +1,9 @@
 
 <h3>- 완성된 GIF 파일 및 배포 링크</h3>
-https://jeongmin7.surge.sh/
 
+![post](https://user-images.githubusercontent.com/91598778/182012106-15e0dafb-e4a4-4144-9fb3-30c46bcb5c09.gif)
+![albums](https://user-images.githubusercontent.com/91598778/182012111-fd7454dc-c016-40c9-ac13-4b57089a29fd.gif)
+https://jeongmin7.surge.sh/
 <h3>- 프로젝트 실행 방법 </h3>
 npm install 후 npm start
 
