@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Albums from "./Albums";
 import List from "./List";
 import LogoTab from "../components/LogoTab";
@@ -43,11 +43,17 @@ const Container = styled.div`
   position: relative;
 `;
 const Main = ({ isDarkMode, handleDarkMode }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(Number);
 
   const selectTabHandler = (index) => {
     setActiveIndex(index);
+    localStorage.setItem("idx", JSON.stringify(index));
   };
+
+  const idx = Number(localStorage.getItem("idx"));
+  useEffect(() => {
+    setActiveIndex(idx);
+  }, []);
 
   const tabContent = [
     {
