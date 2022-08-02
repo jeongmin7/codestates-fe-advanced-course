@@ -10,9 +10,10 @@
 
 
 <h2> 사용한 스택 목록</h2>
-  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
-  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
-    <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> 
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
+<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> 
 <img src="https://img.shields.io/badge/styledcomponents-DB7093?style=for-the-badge&logo=styledcomponents&logoColor=black">
 
 <h2> 구현한 기능 목록 (Software Requirement Specification)</h2>
@@ -35,7 +36,7 @@
 <h2>구현 방법 혹은 구현하면서 어려웠던 점</h2>
 페이지 네이션 구현시 .....
 
-<h2>- (가산점) 직접 작성한 Wireframe 혹은 Prototype (figma 등의 다양한 툴 활용)</h2>
+<h2> 직접 작성한 Wireframe 혹은 Prototype </h2>
 https://www.figma.com/file/nemugsHmucESJ2EFrfIY4F/Untitled?node-id=0%3A1
 
 <h2>추가 구현 사항에 대한 구현 방법과 설명</h2>
