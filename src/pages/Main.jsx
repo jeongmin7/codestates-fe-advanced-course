@@ -53,7 +53,7 @@ const Main = ({ isDarkMode, handleDarkMode }) => {
   const idx = Number(localStorage.getItem("idx"));
   useEffect(() => {
     setActiveIndex(idx);
-  }, []);
+  }, [activeIndex]);
 
   const tabContent = [
     {
