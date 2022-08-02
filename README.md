@@ -39,3 +39,8 @@
 https://www.figma.com/file/nemugsHmucESJ2EFrfIY4F/Untitled?node-id=0%3A1
 
 <h2>추가 구현 사항에 대한 구현 방법과 설명</h2>
+<h3>- 게시물 리스트를 페이지네이션으로 구현</h3>
+<h3>- Tab을 사용하여 post 메뉴 와 album 메뉴를 고를 수 있도록 구현 </h3>
+<h3>- Toggle 버튼을 이용하여 다크모드 구현 </h3>
+<h3>- Search 컴포넌트를 이용하여 게시글을 제목으로 검색할 수 있도록 구현  </h3>
+
