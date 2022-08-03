@@ -1,10 +1,17 @@
 
 <h2>완성된 GIF 파일 및 배포 링크</h2>
-![앨범 확인](https://user-images.githubusercontent.com/91598778/182533582-1fbfd23a-3ad7-4152-ba09-5697695434d0.gif)
+
+
 ![포스트 확인](https://user-images.githubusercontent.com/91598778/182533571-3a53f1d4-5815-48d7-afe3-9d6f108dd1bf.gif)
+<포스트 확인>
 ![페이지네이션](https://user-images.githubusercontent.com/91598778/182533546-5feb612b-0350-417e-8b51-f14c340e4179.gif)
+<페이지네이션>
+![앨범 확인](https://user-images.githubusercontent.com/91598778/182533582-1fbfd23a-3ad7-4152-ba09-5697695434d0.gif)
+<앨범 확인>
 ![다크모드](https://user-images.githubusercontent.com/91598778/182533562-f2d1a9ae-e20a-4d95-b4a4-b53853af1501.gif)
+<다크모드>
 ![검색하기](https://user-images.githubusercontent.com/91598778/182533570-6be60436-0463-4177-9a94-b5f951fcfd55.gif)
+<검색하기>
 
 
 <h3><a href="http://jeongmin7.surge.sh" target='_blank'>🖥 배포 사이트로 바로가기  </a></h3>
