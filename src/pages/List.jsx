@@ -24,11 +24,10 @@ const List = () => {
   const [selected, setSelected] = useState(Number);
   const openModal = (key) => {
     setSelected(key);
-    // setUserId(filteredItem.filter((_, index) => index + 1 === key));
     setPost(!post);
   };
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostPerPage] = useState(10);
+  const postsPerPage = 10;
   const offset = (currentPage - 1) * postsPerPage;
 
   const [filteredItem, setFilteredItem] = useState([]);
@@ -67,16 +66,7 @@ const List = () => {
               <div>No.</div>
               <Title>Title</Title>
               <div>Writer</div>
-            </ListTitle>{" "}
-            {post ? (
-              <Post
-                selected={selected}
-                openModal={openModal}
-                filteredItem={filteredItem}
-              />
-            ) : (
-              ""
-            )}
+            </ListTitle>
             {filteredItem.length === 0 ? (
               <Error>{errorMsg}</Error>
             ) : (
@@ -97,6 +87,15 @@ const List = () => {
                     </div>
                   </ListContent>
                 ))
+            )}{" "}
+            {post ? (
+              <Post
+                selected={selected}
+                openModal={openModal}
+                filteredItem={filteredItem}
+              />
+            ) : (
+              ""
             )}
             {
               <Pagination
