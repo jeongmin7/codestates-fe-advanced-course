@@ -21,13 +21,14 @@ const List = () => {
   const [data, setData] = useState([]);
 
   const [post, setPost] = useState(false);
-  const [selected, setSelected] = useState([]);
+  const [selected, setSelected] = useState(Number);
   const openModal = (key) => {
-    setSelected(filteredItem.filter((_, index) => index + 1 === key));
+    setSelected(key);
+    // setUserId(filteredItem.filter((_, index) => index + 1 === key));
     setPost(!post);
   };
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 10;
+  const [postsPerPage, setPostPerPage] = useState(10);
   const offset = (currentPage - 1) * postsPerPage;
 
   const [filteredItem, setFilteredItem] = useState([]);
@@ -89,9 +90,9 @@ const List = () => {
             )}
             {post ? (
               <Post
-                selected={selected[0]?.id}
+                selected={selected}
                 openModal={openModal}
-                userName={selected[0]?.userId}
+                filteredItem={filteredItem}
               />
             ) : (
               ""

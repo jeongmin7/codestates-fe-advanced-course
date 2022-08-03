@@ -84,11 +84,12 @@ const CommentWriter = styled.div`
 const CommentContent = styled.div`
   font-size: 1.2rem;
 `;
-const Post = ({ selected, openModal, userName }) => {
+const Post = ({ selected, openModal, filteredItem }) => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   const [comments, setComments] = useState([]);
   const [user, setUser] = useState([]);
+  const userName = filteredItem.filter((id) => id.id === selected)[0].userId;
   const getPost = () => {
     setLoading(true);
     axios
@@ -97,7 +98,7 @@ const Post = ({ selected, openModal, userName }) => {
       .then(() => setLoading(false))
       .catch(() => alert("글을 가져올 수 없습니다. "));
   };
-  useEffect(getPost, [selected]);
+  useEffect(getPost, []);
 
   const getUserName = () => {
     setLoading(true);
@@ -108,14 +109,14 @@ const Post = ({ selected, openModal, userName }) => {
       .catch(() => alert("사용자 정보를 불러올 수 없습니다. "));
   };
 
-  useEffect(getUserName, [userName]);
+  useEffect(getUserName, []);
   const getComments = () => {
     axios
       .get(`https://jsonplaceholder.typicode.com/post/${selected}/comments`)
       .then((res) => setComments(res.data))
       .catch(() => alert("댓글 목록을 불러올 수 없습니다. "));
   };
-  useEffect(getComments, [selected]);
+  useEffect(getComments, []);
 
   return (
     <div>
