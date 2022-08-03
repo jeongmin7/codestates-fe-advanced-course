@@ -46,7 +46,7 @@
 *** 
 
 <h2> 직접 작성한 Wireframe 혹은 Prototype </h2>
-* https://www.figma.com/file/nemugsHmucESJ2EFrfIY4F/Untitled?node-id=0%3A1
+<h3><a href="https://www.figma.com/file/nemugsHmucESJ2EFrfIY4F/Untitled?node-id=0%3A1" target='_blank'>🖥 와이어프레임으로 바로가기  </a></h3>
 
 ***
 <h2>추가 구현 사항에 대한 구현 방법과 설명</h2>
