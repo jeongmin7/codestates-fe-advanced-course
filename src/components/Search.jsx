@@ -47,6 +47,7 @@ const Search = ({ data, handleFilteredData, handleErrorMsg }) => {
     } else if (!el.title.toLowerCase().includes(searchTerm.toLowerCase())) {
       return handleErrorMsg("일치하는 항목이 없습니다.");
     }
+    return el;
   });
 
   const clearInput = () => {
