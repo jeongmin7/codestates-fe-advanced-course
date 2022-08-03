@@ -34,17 +34,20 @@
 
 
 <h2>구현 방법 혹은 구현하면서 어려웠던 점</h2>
-필수 구현에 대해서 먼저 설명드리자면 리스트를 볼 수 있는 <Main />컴포넌트와 해당 게시물의 상세 내역을 볼 수 있는 <Post /> 모달로 컴포넌트를 분리했습니다.
-<Main /> 컴포넌트의 경우 "/"로 연결 시켰고 <Post />의 경우 따로 연결되는 경로는 없으며 모달창으로 렌더링이 됩니다.  
-styled-component를 사용하여 레이아웃을 구현했습니다. 
+
+* 필수 구현
+  + 리스트를 볼 수 있는 <Main />컴포넌트와 해당 게시물의 상세 내역을 볼 수 있는 <Post /> 모달로 컴포넌트를 분리했습니다.
+  + <Main /> 컴포넌트의 경우 "/"로 연결 시켰고 <Post />의 경우 따로 연결되는 경로는 없으며 모달창으로 렌더링이 됩니다.  
+  + styled-component를 사용하여 레이아웃을 구현했습니다. 
 
 
 <h2> 직접 작성한 Wireframe 혹은 Prototype </h2>
-https://www.figma.com/file/nemugsHmucESJ2EFrfIY4F/Untitled?node-id=0%3A1
+* https://www.figma.com/file/nemugsHmucESJ2EFrfIY4F/Untitled?node-id=0%3A1
 
 <h2>추가 구현 사항에 대한 구현 방법과 설명</h2>
-<h3>- 게시물 리스트를 페이지네이션으로 구현</h3>
-<h3>- Tab을 사용하여 post 메뉴 와 album 메뉴를 고를 수 있도록 구현 </h3>
-<h3>- Toggle 버튼을 이용하여 다크모드 구현 </h3>
-<h3>- Search 컴포넌트를 이용하여 게시글을 제목으로 검색할 수 있도록 구현  </h3>
+
+* <h3> 게시물 리스트를 페이지네이션으로 구현</h3>
+* <h3>Tab을 사용하여 post 메뉴 와 album 메뉴를 고를 수 있도록 구현 </h3>
+* <h3>Toggle 버튼을 이용하여 다크모드 구현 </h3>
+* <h3>Search 컴포넌트를 이용하여 게시글을 제목으로 검색할 수 있도록 구현  </h3>
 
