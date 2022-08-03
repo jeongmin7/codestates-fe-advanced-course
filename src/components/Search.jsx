@@ -54,10 +54,7 @@ const Search = ({ data, handleFilteredData, handleErrorMsg }) => {
     nameInput.current.focus();
   };
 
-  useEffect(
-    () => handleFilteredData(filteredData),
-    [handleFilteredData, filteredData]
-  );
+  useEffect(() => handleFilteredData(filteredData), [searchTerm]);
   return (
     <Container>
       <span>
