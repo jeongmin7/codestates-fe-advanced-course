@@ -42,12 +42,10 @@ const Search = ({ data, handleFilteredData, handleErrorMsg }) => {
     setSearchTerm(e.target.value);
   };
   let filteredData = data.filter((el) => {
-    // FIXME: error!
     if (el.title.toLowerCase().includes(searchTerm.toLowerCase())) {
       return el;
     } else if (!el.title.toLowerCase().includes(searchTerm.toLowerCase())) {
       return handleErrorMsg("일치하는 항목이 없습니다.");
-      // FIXME: 여기서 오류
     }
   });
 

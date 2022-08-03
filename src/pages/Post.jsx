@@ -80,7 +80,6 @@ const Comments = styled.div`
 const CommentWriter = styled.div`
   width: 80%;
   font-weight: 500;
-  color: #333;
 `;
 const CommentContent = styled.div`
   font-size: 1.2rem;
