@@ -9,7 +9,6 @@ import {
   Error,
   BigContainer,
   ListTitle,
-  ListContent,
   ListRow,
   NumAndTitle,
   Title,

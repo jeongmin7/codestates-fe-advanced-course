@@ -1,6 +1,3 @@
-import React, { useState, useEffect } from "react";
-import Albums from "./Albums";
-import List from "./List";
 import LogoTab from "../components/LogoTab";
 import styled from "styled-components";
 import Darkmode from "../components/DarkMode";
