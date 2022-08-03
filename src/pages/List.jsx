@@ -53,7 +53,9 @@ const List = () => {
   useEffect(getPosts, []);
   return (
     <div>
-      {loading === false ? (
+      {loading ? (
+        <Loading />
+      ) : (
         <BigContainer>
           <ListContainer>
             <Search
@@ -61,12 +63,12 @@ const List = () => {
               handleFilteredData={handleFilteredData}
               handleErrorMsg={handleErrorMsg}
             />
+
             <ListTitle>
               <div>No.</div>
               <Title>Title</Title>
               <div>Writer</div>
             </ListTitle>
-
             {filteredItem.length === 0 ? (
               <Error>{errorMsg}</Error>
             ) : (
@@ -97,6 +99,7 @@ const List = () => {
             ) : (
               ""
             )}
+
             {
               <Pagination
                 total={filteredItem.length}
@@ -107,8 +110,6 @@ const List = () => {
             }
           </ListContainer>
         </BigContainer>
-      ) : (
-        <Loading />
       )}
     </div>
   );
