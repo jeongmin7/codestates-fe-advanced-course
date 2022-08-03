@@ -63,12 +63,20 @@ const List = () => {
               handleFilteredData={handleFilteredData}
               handleErrorMsg={handleErrorMsg}
             />
-
             <ListTitle>
               <div>No.</div>
               <Title>Title</Title>
               <div>Writer</div>
-            </ListTitle>
+            </ListTitle>{" "}
+            {post ? (
+              <Post
+                selected={selected}
+                openModal={openModal}
+                filteredItem={filteredItem}
+              />
+            ) : (
+              ""
+            )}
             {filteredItem.length === 0 ? (
               <Error>{errorMsg}</Error>
             ) : (
@@ -90,16 +98,6 @@ const List = () => {
                   </ListContent>
                 ))
             )}
-            {post ? (
-              <Post
-                selected={selected}
-                openModal={openModal}
-                filteredItem={filteredItem}
-              />
-            ) : (
-              ""
-            )}
-
             {
               <Pagination
                 total={filteredItem.length}
