@@ -38,7 +38,7 @@ const TabMenu = () => {
   const idx = Number(localStorage.getItem("idx"));
   useEffect(() => {
     setActiveIndex(idx);
-  }, [activeIndex]);
+  }, [idx]);
 
   const tabContent = [
     {

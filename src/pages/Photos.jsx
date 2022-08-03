@@ -38,7 +38,7 @@ const Photos = () => {
       .then(() => setLoading(false))
       .catch(() => alert("사진을 가져올 수 없습니다. "));
   };
-  useEffect(getPhotos, []);
+  useEffect(getPhotos, [params.id]);
 
   return (
     <div>
