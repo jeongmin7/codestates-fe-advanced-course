@@ -90,6 +90,7 @@ const Post = ({ selected, openModal, filteredItem }) => {
   const [comments, setComments] = useState([]);
   const [user, setUser] = useState([]);
   const userName = filteredItem.filter((id) => id.id === selected)[0].userId;
+
   const getPost = () => {
     setLoading(true);
     axios

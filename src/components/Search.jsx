@@ -79,7 +79,3 @@ const Search = ({ data, handleFilteredData, handleErrorMsg }) => {
 };
 
 export default Search;
-//자식  let filteredData = data.filter((el) => {
-// if (el.title.toLowerCase().includes(searchTerm.toLowerCase())) {
-//   return el;
-// }
